@@ -203,14 +203,14 @@ public class Modelisation {
 			UE_A.add(Module_A3);
 			
 			ArrayList<Module> UE_B = new ArrayList<Module>(Nb_module_UEB);
-			UE_A.add(Module_B1);
-			UE_A.add(Module_B2);
-			UE_A.add(Module_B3);
+			UE_B.add(Module_B1);
+			UE_B.add(Module_B2);
+			UE_B.add(Module_B3);
 			
 			ArrayList<Module> UE_C = new ArrayList<Module>(Nb_module_UEC);
-			UE_A.add(Module_C1);
-			UE_A.add(Module_C2);
-			UE_A.add(Module_C3);
+			UE_C.add(Module_C1);
+			UE_C.add(Module_C2);
+			UE_C.add(Module_C3);
 			
 			Modelisation test = new Modelisation(UE_A,UE_B,UE_C,Nb_Semaines,Dispo);
 		   

@@ -42,7 +42,7 @@ public class Modelisation {
 		// On pose la contrainte sur la variable Nb_Seances
 		model.arithm(Nb_Seances[0], "=", donnee.Nb_0()).post(); 
 		for (UE i :donnee.getListe_UE()) {
-			for (Module j :i.getUe()) {
+			for (Module j :i.getListeModules()) {
 				model.arithm(Nb_Seances[j.getNumero_module()], "=", j.getNb_Creneaux()).post(); 
 			}
 		}
@@ -156,13 +156,31 @@ public class Modelisation {
 		 for (int i=0; i<donnee.getCalendrier().getNb_Jours(); i++) {
 				System.out.println(nb0parjour[i]);
 			}
+		 for (int j=0; j<6; j++) {
+			 
+		 }
 		 
 		 for (int i=0; i<donnee.getCalendrier().getNb_Jours(); i++) {
-				for (int j=0; j<6; j++) {
-					System.out.println(agendajour[i][j]);
-				}
+			 for (int j=0; j<6; j++) {
+				 System.out.println(agendajour[i][j]);
+			 }
+		 }
 		 
-	 }
+		 String jour = "";
+		 for (int i=0; i<donnee.getCalendrier().getNb_Jours(); i++) {
+			 jour = jour+ "Jour "+i+": \t";
+		 }
+		 System.out.println(jour);
+		
+
+		 for (int j=0; j<6; j++) {
+			 String cours_creneau="";
+			 for (int i=0; i<donnee.getCalendrier().getNb_Jours(); i++) {
+				 cours_creneau+= agendajour[i][j].getValue()+"\t"+"\t";
+			 }
+			 System.out.println(cours_creneau);
+			 
+		 }
 	 }
 	 
 	 public static void main(String[] args) {
